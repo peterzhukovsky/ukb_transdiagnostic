@@ -66,7 +66,7 @@ age=minimal_ordered.x21003_2_0;sex=minimal_ordered.x31_0_0;
 permutations=1000;
 ix=(cellfun('isempty', clinical)'| isnan(ica_partial(:,1))) ; a=age; a(ix)=[];s=sex;s(ix)=[];clin=clinical; clin(ix)=[];
 cognitive=cognitive_ordered; cognitive(ix,:)=[]; minimal=minimal_ordered; minimal(ix,:)=[]; MDD_prs=MDD_prs_ordered; MDD_prs(ix)=[]; ANX_prs=ANX_prs_ordered; ANX_prs(ix)=[]; PTSD_prs=PTSD_prs_ordered; PTSD_prs(ix)=[];
-
+%%%%% the models can be either ran with PRS as covariates or without - the models without PRS as covariates are shown here, but the the model with PRS as covariates can be ran by unchecking the "%"
 for i=1:length(ica_partial(1,:))
         allobservations=ica_partial(:,i);allobservations(ix)=[];i
         parfor n = 1:permutations; 
@@ -75,12 +75,16 @@ for i=1:length(ica_partial(1,:))
         T=mktbl(a,s,clin',    minimal.x25741_2_0, minimal.x54_2_0, randomSample); %x25741=motion, x21000=race (1 2 3 4), x54=site, MDD_prs, ANX_prs, PTSD_prs,
         mdl = fitlm(T,'y~x1+x1^2+x1*x2+x2+x3+x4+x5  ');Td(1,n)=mdl.Coefficients.tStat(4); Tda(1,n)=mdl.Coefficients.tStat(5); Ts(1,n)=mdl.Coefficients.tStat(6); Ta(1,n)=mdl.Coefficients.tStat(7);Tmddp(1,n)=mdl.Coefficients.tStat(8);
         anovamdl=anova(mdl); F(1,n)=anovamdl.F(3);%F2(1,n)=anovamdl.F(4);F3(1,n)=anovamdl.F(5);F4(1,n)=anovamdl.F(6);
+        %T=mktbl(a,s,clin', MDD_prs, ANX_prs, PTSD_prs,    minimal.x25741_2_0, minimal.x54_2_0, randomSample);
+        %mdl = fitlm(T,'y~x1+x1^2+x1*x2+x2+x3+x4+x5  +x6+x7+x8  ');Td(1,n)=mdl.Coefficients.tStat(4); Tda(1,n)=mdl.Coefficients.tStat(5); Ts(1,n)=mdl.Coefficients.tStat(6); Ta(1,n)=mdl.Coefficients.tStat(7);Tmddp(1,n)=mdl.Coefficients.tStat(8);
         end; 
         F_perm(i,:)=F; Tperm_dep(i,:)=Td;Tperm_depan(i,:)=Tda;Tperm_str(i,:)=Ts;Tperm_anx(i,:)=Ta;
         %F_mddprs(i,:)=F2;F_anxprs(i,:)=F3;F_ptsdprs(i,:)=F4; 
         clear Td Tda Ts Ta Tmddp F2 F3 F4
   clear T; T=mktbl(a,s,clin',  minimal.x25741_2_0,minimal.x54_2_0, allobservations); %x25741=motion, x21000=race (1 2 3 4), x54=site
   mdl = fitlm(T,'y~x1+x1^2+x1*x2+x2+x3+x4+x5  '); anovamdl=anova(mdl);
+  %T=mktbl(a,s,clin', MDD_prs, ANX_prs, PTSD_prs,    minimal.x25741_2_0, minimal.x54_2_0, allobservations);
+  %mdl = fitlm(T,'y~x1+x1^2+x1*x2+x2+x3+x4+x5  +x6+x7+x8  ');
   p_perm_anova(i)=1-sum(anovamdl.F(3)>F_perm(i,:))/permutations; 
   %p_perm_prs(i,1)=1-sum(anovamdl.F(4)> F_mddprs(i,:))/permutations; p_perm_prs(i,2)=1-sum(anovamdl.F(5)> F_anxprs(i,:))/permutations; p_perm_prs(i,3)=1-sum(anovamdl.F(6)> F_ptsdprs(i,:))/permutations; 
   %Tprs(1,i)=mdl.Coefficients.tStat(8);  Tprs(2,i)=mdl.Coefficients.tStat(9);  Tprs(3,i)=mdl.Coefficients.tStat(10);  Pprs(1,i)=mdl.Coefficients.pValue(8);  Pprs(2,i)=mdl.Coefficients.pValue(9);  Pprs(3,i)=mdl.Coefficients.pValue(10);  
@@ -152,6 +156,8 @@ for i=1:length(ct_ordered(1,:))
         randomSample = allobservations(permutation_index,:);
         T=mktblprs(a,s,clin', MDD_prs, ANX_prs, PTSD_prs,    minimal.x54_2_0, randomSample); %x25741=motion, x21000=race (1 2 3 4), x54=site, MDD_prs, ANX_prs, PTSD_prs
         mdl = fitlm(T,'y~x1+x1^2+x1*x2+x2+x3+x4 +x5+x6+x7 ');Td(1,n)=mdl.Coefficients.tStat(4); Tda(1,n)=mdl.Coefficients.tStat(5); Ts(1,n)=mdl.Coefficients.tStat(6); Ta(1,n)=mdl.Coefficients.tStat(7);Tmddp(1,n)=mdl.Coefficients.tStat(8);
+        %T=mktblprs(a,s,clin',   minimal.x54_2_0, randomSample); 
+        %mdl = fitlm(T,'y~x1+x1^2+x1*x2+x2+x3+x4 ');Td(1,n)=mdl.Coefficients.tStat(4); Tda(1,n)=mdl.Coefficients.tStat(5); Ts(1,n)=mdl.Coefficients.tStat(6); Ta(1,n)=mdl.Coefficients.tStat(7);
         anovamdl=anova(mdl); F(1,n)=anovamdl.F(3);
         F2(1,n)=anovamdl.F(4);F3(1,n)=anovamdl.F(5);F4(1,n)=anovamdl.F(6);
         end; 
@@ -160,7 +166,7 @@ for i=1:length(ct_ordered(1,:))
   clear T; T=mktblprs(a,s,clin',   MDD_prs, ANX_prs, PTSD_prs,     minimal.x54_2_0, allobservations); %x25741=motion, x21000=race (1 2 3 4), x54=site
   mdl = fitlm(T,'y~x1+x1^2+x1*x2+x2+x3+x4 +x5+x6+x7 '); anovamdl=anova(mdl);
   p_perm_anova(i)=1-sum(anovamdl.F(3)>F_perm(i,:))/permutations; 
-  p_perm_prs(i,1)=1-sum(anovamdl.F(4)> F_mddprs(i,:))/permutations; p_perm_prs(i,2)=1-sum(anovamdl.F(5)> F_anxprs(i,:))/permutations; p_perm_prs(i,3)=1-sum(anovamdl.F(6)> F_ptsdprs(i,:))/permutations; 
+  p_perm_prs(i,1)=1-sum(anovamdl.F(4)> F_mddprs(i,:))/permutations; p_perm_prs(i,2)=1-sum(anovamdl.F(5)> F_anxprs(i,:))/permutations; p_perm_prs(i,3)=1-sum(anovamdl.F(6)> F_ptsdprs(i,:))/permutations;  % check this line if you're not including PRS as covariates
   Tprs(1,i)=mdl.Coefficients.tStat(8);  Tprs(2,i)=mdl.Coefficients.tStat(9);  Tprs(3,i)=mdl.Coefficients.tStat(10);  
   Tage(1,i)=mdl.Coefficients.tStat(2); 
   Tsex(1,i)=mdl.Coefficients.tStat(3);
@@ -171,7 +177,7 @@ for i=1:length(ct_ordered(1,:))
 end
 %figure;imagesc(Tanx);colorbar; colormap default
 
-%%%sign regions:
+%%%Create table with summary scores for sign regions for dep (MDD), depanx (MDD+ANX), anx (ANX) or str (STR):
 tmp=Pdep; tmp2=Tdep;
 table(label_names_all(p_perm_anova<0.05 & tmp<0.0125),...
 label_names_HOA(p_perm_anova<0.05 & tmp<0.0125), ...
@@ -179,6 +185,7 @@ tmp2(p_perm_anova<0.05 & tmp<0.0125)', tmp(p_perm_anova<0.05 & tmp<0.0125)',...
 2*tmp2(p_perm_anova<0.05 & tmp<0.0125)'./sqrt(30419)    ); clear tmp tmp2; sortrows(ans, 2)
 
 
+%create table with summary scores for 
 tmp=3
 table(label_names_all(p_perm_prs(:,tmp)<0.05),...
 label_names_HOA(p_perm_prs(:,tmp)<0.05),...
