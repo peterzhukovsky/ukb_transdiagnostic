@@ -4,10 +4,6 @@ selfreport_ordered=readtable('selfreport_ordered.csv');
 healthy_ordered=readtable('healthy_ordered.csv');healthydate_ordered=readtable('healthydate_ordered.csv');
 minimal_ordered=readtable('minimal_ordered.csv');
 ct_ordered=dlmread('ct_ordered.csv');
-ms_ordered=dlmread('ms_ordered.csv');
-gc_ordered_dem=dlmread('gc_ordered_dem.csv');
-gc_ordered=dlmread('gc_ordered.csv');
-yeormat_ordered=dlmread('yeormat_ordered.csv');
 cognitive_ordered=readtable('cognitive_ordered.csv');
 thicknessFS=readtable('thicknessFS_ordered.csv');thicknessFS=thicknessFS{:,:}; thicknessFS(:,1:2)=[];
 physical_ordered=readtable('physical_ordered.csv');
@@ -16,7 +12,6 @@ ANX_prs_ordered=dlmread('ANX_prs_ordered.csv');y=ANX_prs_ordered;X=[healthydate_
 PTSD_prs_ordered=dlmread('PTSD_prs_ordered.csv');y=PTSD_prs_ordered;X=[healthydate_ordered.x22009_0_1,healthydate_ordered.x22009_0_2, healthydate_ordered.x22009_0_3, healthydate_ordered.x22009_0_4, healthydate_ordered.x22009_0_5,healthydate_ordered.x22009_0_6,healthydate_ordered.x22009_0_7,healthydate_ordered.x22009_0_8,healthydate_ordered.x22009_0_9,healthydate_ordered.x22009_0_10]; [b,bint,r] = regress(y,X); PTSD_prs_ordered=r;
 
 cd D:\Canada_2020\UK_biobank\data
-%ica_partial=dlmread('ica_d25_full.csv');
 ica_partial=dlmread('ica_d25_par.csv');
 
 cd D:\Canada_2020\UK_biobank\reports
