@@ -83,3 +83,5 @@ This function was used in *drawingcircle.m*
 *mktbl.m* - a function to generate a table for use with *fitlm* (needed for parallelization in R2016a)
 
 *clean.m* - a function for removing outliers (takes the number of standard deviations from the mean that are considered bounds for outlier detection)
+
+PRS calculations followed Wainberg et al 2021: https://pubmed.ncbi.nlm.nih.gov/34008483/
