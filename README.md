@@ -55,11 +55,11 @@ MATLAB Bioinformatics toolbox
 
 MATLAB Parallization toobox
 
-Visualizations rely on the circulargraph function:
+Visualizations rely on the *circulargraph* function:
 
 https://uk.mathworks.com/matlabcentral/fileexchange/48576-circulargraph
 
-and the allcomb function
+and the *allcomb* function
 
 https://uk.mathworks.com/matlabcentral/fileexchange/10064-allcomb-varargin
 
