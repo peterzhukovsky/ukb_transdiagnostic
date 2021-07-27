@@ -22,8 +22,11 @@ b) runs a partial least squares regression to predict performance on four cognit
 We run the PLS across all cases together, in each case group separately and in healthy controls separately
 Permutation testing is used to test for significance of the % of variance explained by the PLS model in the cognitive outcome variables (Y)
 c) generates bootstrapped loadings following Dr Sarah Morgan's scripts:
+
 https://www.pnas.org/content/116/19/9604
+
 https://github.com/SarahMorgan/Morphometric_Similarity_SZ/blob/master/Gene_analyses.md
+
 d) plots the results in several ways
 
 # network_viz.m
