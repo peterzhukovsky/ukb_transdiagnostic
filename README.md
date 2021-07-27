@@ -35,6 +35,15 @@ d) plots the results (specifically the pairwise connectivity loadings contributi
 # network_viz.m
 This script was used to generate the colormaps for cortical thickness brain maps. Those colormaps were used with freesurfer to generate a freesurfer parcellation in  Glaser 360 ROI space, similar to https://github.com/peterzhukovsky/brain_ageing
 
+# UKB_ICAd25 
+
+This folder contains the 21 signal components from the 25-dimensional ICA analysis, provided by the UKB: https://www.fmrib.ox.ac.uk/datasets/ukbiobank/index.html
+
+*d25_to_Yeo7_mapping.sh* - this script does the following:
+
+a) maps the components from the volumetric MNI space to the fsaverage surface space (mgh surface maps of the ICA components are also shared in this folder)
+
+b) and checks (in the volumetric MNI 1mm space) what percentage of voxels in each of the components fall under each of the Yeo 7 networks. Yeo 7 networks in volume space are available from https://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation_Yeo2011
 
 # Additional dependencies and small functions:
 
