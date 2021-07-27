@@ -9,7 +9,7 @@ b) permutation testing general linear models testing for the effects of clinical
 - major depression: MDD- ('dep')
 - non phobic anxiety disorders: ANX- ('anx')
 - comorbid major depression with anxiety: MDD+ANX ('depanx') 
-- stress-related disorders: STR ('str')
+- stress-related disorders: STR- ('str')
 
 Further, effects of MDD, ANX and PTSD polygenic risk scores are tested. 
 The resulting brain maps are correlated and the correlations are also permutation tested
