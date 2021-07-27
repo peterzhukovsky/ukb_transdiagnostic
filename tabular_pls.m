@@ -68,7 +68,7 @@ clinical(id_stress==1)={'str'};clinical(40699)=clinical(40697);
 age=minimal_ordered.x21003_2_0;sex=minimal_ordered.x31_0_0; 
 
 
-%%%
+%%% preparing data (regressing out confounds), running PLS and using permutation testing to test for significance
 
 cognitive_ordered.x6350_2_0(cognitive_ordered.x6350_2_0> (nanmean(cognitive_ordered.x6350_2_0)+4*nanstd(cognitive_ordered.x6350_2_0)) | cognitive_ordered.x6350_2_0<100)=NaN; %Duration to complete alphanumeric path 
 cognitive_ordered.x6348_2_0(cognitive_ordered.x6348_2_0<100 | cognitive_ordered.x6348_2_0> (nanmean(cognitive_ordered.x6350_2_0)+3*nanstd(cognitive_ordered.x6348_2_0)) )=NaN; %Duration to complete numeric/easy path 
