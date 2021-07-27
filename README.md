@@ -52,7 +52,7 @@ b) and checks (in the volumetric MNI 1mm space) what percentage of voxels in eac
 
 # Sample data
 
-We provide random data (n=1000), based on real data from the UKB, which can be used to try out the scripts. The data is included in */random_data/randomised_data.mat*. The randomisation script is also included as *shuffling_script.m* and *shuffle.m*. Note that we don't provide medication data as it contains tables of medication regimens. 
+We provide random data (n=1000), based on real data from the UKB, which can be used to try out the scripts. The data is included in */random_data/randomised_data.mat*. The randomisation script is also included as *shuffling_script.m* and *shuffle.m*. Note that we don't provide medication data as it contains tables of medication regimens. Random data is saved as a *.mat* file that contains among other variables the names of the 360 Glasser regions (and their mapping on to the Harvard-Oxford volumetric atlas, done using fsleyes). We also provide the *ica2yeo7.csv* table used for creating the circular graph and for labelling the connectivity matrices.
 
 # Additional dependencies and small functions:
 
@@ -83,4 +83,3 @@ This function was used in *drawingcircle.m*
 *mktbl.m* - a function to generate a table for use with *fitlm* (needed for parallelization in R2016a)
 
 *clean.m* - a function for removing outliers (takes the number of standard deviations from the mean that are considered bounds for outlier detection)
-
