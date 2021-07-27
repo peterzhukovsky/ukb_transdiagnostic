@@ -35,7 +35,10 @@ d) plots the results in several ways
 # network_viz.m
 This script was used to generate the colormaps for cortical thickness brain maps. Those colormaps were used with freesurfer to generate a parcellation (aparc) similar to https://github.com/peterzhukovsky/brain_ageing
 
-The code requires:
+
+# Additional dependencies and small functions:
+
+The code relies on:
 
 MATLAB Statistics toolbox
 
@@ -53,3 +56,4 @@ We also used plot_arc in creating the circular graph with the networks:
 
 https://uk.mathworks.com/matlabcentral/answers/6322-drawing-a-segment-of-a-circle
 
+This function was used in #drawingcircle.m# 
