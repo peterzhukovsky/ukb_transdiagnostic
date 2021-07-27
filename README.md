@@ -26,6 +26,9 @@ https://www.pnas.org/content/116/19/9604
 https://github.com/SarahMorgan/Morphometric_Similarity_SZ/blob/master/Gene_analyses.md
 d) plots the results in several ways
 
+# network_viz.m
+This script was used to generate the colormaps for cortical thickness brain maps. Those colormaps were used with freesurfer to generate a parcellation (aparc) similar to https://github.com/peterzhukovsky/brain_ageing
+
 The code requires:
 MATLAB Statistics toolbox
 MATLAB Bioinformatics toolbox
