@@ -52,7 +52,7 @@ b) and checks (in the volumetric MNI 1mm space) what percentage of voxels in eac
 
 # Sample data
 
-We provide random data based on real data from the UKB, which can be used to try out the scripts. The data is included in */random_data/randomised_data.mat*. The randomisation script is also included as *shuffling_script.m* and *shuffle.m*.
+We provide random data based on real data from the UKB, which can be used to try out the scripts. The data is included in */random_data/randomised_data.mat*. The randomisation script is also included as *shuffling_script.m* and *shuffle.m*. Note that we don't provide medication data as it contains tables of medication regimens. 
 
 # Additional dependencies and small functions:
 
