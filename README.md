@@ -50,6 +50,10 @@ a) maps the components from the volumetric MNI space to the fsaverage surface sp
 
 b) and checks (in the volumetric MNI 1mm space) what percentage of voxels in each of the components fall under each of the Yeo 7 networks. Yeo 7 networks in volume space are available from https://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation_Yeo2011
 
+# Sample data
+
+We provide random data based on real data from the UKB, which can be used to try out the scripts. The data is included in */random_data/randomised_data.mat*. The randomisation script is also included as *shuffling_script.m* and *shuffle.m*.
+
 # Additional dependencies and small functions:
 
 The code relies on:
