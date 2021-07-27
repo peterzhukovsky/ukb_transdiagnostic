@@ -3,16 +3,21 @@ The following code was used to analyse tabular UKB data (ran in MATLAB R2016a):
 # tabular_ukb.m
 This scripts includes 
 a) data cleaning and creating new variables representing clinical and cognitive variables, including four non-overlapping case groups
+
 b) permutation testing general linear models testing for the effects of clinical groups (F-test) and running case-control post hoc tests (T-statistic) for 
+
 - major depression: MDD- ('dep')
 - non phobic anxiety disorders: ANX- ('anx')
 - comorbid major depression with anxiety: MDD+ANX ('depanx') 
 - stress-related disorders: STR ('str')
 
 Further, effects of MDD, ANX and PTSD polygenic risk scores are tested. 
-The resulting brain maps are correlated 
+The resulting brain maps are correlated and the correlations are also permutation tested
+
 c) general linear models (uncorrected p-values) for cognitive data from the UKB cognitive battery
+
 d) demographic table
+
 e) visualizations and tables based on the above results 
 
 # tabular_pls.m
