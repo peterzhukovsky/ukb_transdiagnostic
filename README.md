@@ -1,4 +1,4 @@
-The following code was used to analyse tabular UKB data (ran in MATLAB R2016a):
+The following code was used to analyse tabular UKB data (ran in MATLAB R2016a, on windows 8.1):
 
 # tabular_ukb.m
 This scripts includes 
