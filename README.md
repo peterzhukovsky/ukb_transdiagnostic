@@ -8,6 +8,7 @@ b) permutation testing general linear models testing for the effects of clinical
 - non phobic anxiety disorders: ANX- ('anx')
 - comorbid major depression with anxiety: MDD+ANX ('depanx') 
 - stress-related disorders: STR ('str')
+
 Further, effects of MDD, ANX and PTSD polygenic risk scores are tested. 
 The resulting brain maps are correlated 
 c) general linear models (uncorrected p-values) for cognitive data from the UKB cognitive battery
