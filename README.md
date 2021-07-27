@@ -33,7 +33,7 @@ https://github.com/SarahMorgan/Morphometric_Similarity_SZ/blob/master/Gene_analy
 d) plots the results (specifically the pairwise connectivity loadings contributing to the latent PLS variables) using matrices and circular ("wheel-like") graphs
 
 # network_viz.m
-This script was used to generate the colormaps for cortical thickness brain maps. Those colormaps were used with freesurfer to generate a parcellation (aparc) similar to https://github.com/peterzhukovsky/brain_ageing
+This script was used to generate the colormaps for cortical thickness brain maps. Those colormaps were used with freesurfer to generate a freesurfer parcellation in  Glaser 360 ROI space, similar to https://github.com/peterzhukovsky/brain_ageing
 
 
 # Additional dependencies and small functions:
@@ -44,11 +44,13 @@ MATLAB Statistics toolbox
 
 MATLAB Bioinformatics toolbox
 
+MATLAB Parallization toobox
+
 Visualizations rely on the circulargraph function:
 
 https://uk.mathworks.com/matlabcentral/fileexchange/48576-circulargraph
 
-allcomb function
+and the allcomb function
 
 https://uk.mathworks.com/matlabcentral/fileexchange/10064-allcomb-varargin
 
@@ -60,7 +62,7 @@ This function was used in *drawingcircle.m*
 
 *drawingcircle.m* - a script to generate the colorful outside rim of the circular graphs
 
-*mktbl.m* - a function to generate a table (useful for parallelization in R2016a)
+*mktbl.m* - a function to generate a table for use with *fitlm* (needed for parallelization in R2016a)
 
-*clean.m* - a function for removing outliers
+*clean.m* - a function for removing outliers (takes the number of standard deviations from the mean that are considered bounds for outlier detection)
 
