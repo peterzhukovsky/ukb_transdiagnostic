@@ -85,3 +85,8 @@ This function was used in *drawingcircle.m*
 *clean.m* - a function for removing outliers (takes the number of standard deviations from the mean that are considered bounds for outlier detection)
 
 PRS calculations followed Wainberg et al 2021: https://pubmed.ncbi.nlm.nih.gov/34008483/
+
+
+# Runtime
+
+Permutations are notoriously slow as they require running the analysis of interest many time over and over. On a quad code intel i7 CPU with 16 GB RAM, running GLMs with apppx 27,000 participants a permutation block (of n=1000 permutations) should take 2.5-3.5h when using parfor parallelization. Using only one CPU this time would approximately quadruple. 
