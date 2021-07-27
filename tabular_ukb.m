@@ -59,7 +59,7 @@ clinical(id_healthy==0)={'hc'};
 clinical(id_dep==1)={'dep'};
 clinical(id_depanx==1)={'depanx'};
 clinical(id_anxious==1)={'anx'};
-clinical(id_stress==1)={'str'};clinical(40699)=clinical(40697);
+clinical(id_stress==1)={'str'};%clinical(40699)=clinical(40697);
 age=minimal_ordered.x21003_2_0;sex=minimal_ordered.x31_0_0; 
 
                 %% permutation testing GLMs
