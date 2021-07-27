@@ -199,41 +199,6 @@ subplot(2,3,4); scatter(Tdep', Tdepanx'); corr(Tdep', Tdepanx')
 subplot(2,3,5); scatter(Tanx', Tdepanx'); corr(Tanx', Tdepanx')
 subplot(2,3,6); scatter(Tstr', Tdepanx'); corr(Tstr', Tdepanx')
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Morphometric
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Similarity
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% out of iterest
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-clear T* P*
-for i=1:length(ms_ordered(1,:))
-        allobservations=ms_ordered(:,i);allobservations(ix)=[];
-        %parfor n = 1:permutations; 
-        %permutation_index = randperm(length(allobservations));
-        %randomSample = allobservations(permutation_index,:);
-        %T=mktbl(a,s,clin',MDD_prs,minimal.x54_2_0, randomSample); %x25741=motion, x21000=race (1 2 3 4), x54=site
-        %mdl = fitlm(T,'y~x1+x1^2+x1*x2+x2+x3+x4+x5');Td(1,n)=mdl.Coefficients.tStat(4); Tda(1,n)=mdl.Coefficients.tStat(5); Ts(1,n)=mdl.Coefficients.tStat(6); Ta(1,n)=mdl.Coefficients.tStat(7);Tmddp(1,n)=mdl.Coefficients.tStat(8);
-        %anovamdl=anova(mdl); F(1,n)=anovamdl.F(3);F2(1,n)=anovamdl.F(4);
-        %end; 
-        %F_perm(i,:)=F; Tperm_dep(i,:)=Td;Tperm_depan(i,:)=Tda;Tperm_str(i,:)=Ts;Tperm_anx(i,:)=Ta;Tperm_mddprs(i,:)=Tmddp;
-        %F_mddprs(i,:)=F2;clear Td Tda Ts Ta Tmddp F2
-  clear T; T=mktbl(a,s,clin',MDD_prs,minimal.x54_2_0, allobservations); %x25741=motion, x21000=race (1 2 3 4), x54=site
-  mdl = fitlm(T,'y~x1+x1^2+x1*x2+x2+x3+x4+x5'); anovamdl=anova(mdl);
-  %p_perm_anova(i)=1-sum(anovamdl.F(3)>F_perm(i,:))/permutations; p_perm_mddprs(i)=1-sum(anovamdl.F(4)> F_mddprs(i,:))/permutations; 
-  Tage(1,i)=mdl.Coefficients.tStat(2); Tmddprs(1,i)=mdl.Coefficients.tStat(8);  Pmddprs(1,i)=mdl.Coefficients.pValue(8); 
-  Tsex(1,i)=mdl.Coefficients.tStat(3);
-  Tdep(1,i)=mdl.Coefficients.tStat(4); Pdep(1,i)=mdl.Coefficients.pValue(4);
-  Tdepanx(1,i)=mdl.Coefficients.tStat(5); Pdepanx(1,i)=mdl.Coefficients.pValue(5);
-  Tstr(1,i)=mdl.Coefficients.tStat(6); Pstr(1,i)=mdl.Coefficients.pValue(6);
-  Tanx(1,i)=mdl.Coefficients.tStat(7); Panx(1,i)=mdl.Coefficients.pValue(7);
-end
-figure;histogram(Tdep); hold on; histogram(Tdepanx); hold on;histogram(Tanx); hold on;histogram(Tstr);
-
-figure;subplot(2,3,1); scatter(Tdep', Tanx'); corr(Tdep', Tanx')
-subplot(2,3,2);scatter(Tdep', Tstr'); corr(Tdep', Tstr')
-subplot(2,3,3);scatter(Tanx', Tstr'); corr(Tanx', Tstr')
-subplot(2,3,4); scatter(Tdep', Tdepanx'); corr(Tdep', Tdepanx')
-subplot(2,3,5); scatter(Tanx', Tdepanx'); corr(Tanx', Tdepanx')
-subplot(2,3,6); scatter(Tstr', Tdepanx'); corr(Tstr', Tdepanx')
-
 %% cognitive_ordered outcomes
 cognitive_ordered.x6350_2_0(cognitive_ordered.x6350_2_0> (nanmean(cognitive_ordered.x6350_2_0)+4*nanstd(cognitive_ordered.x6350_2_0)) | cognitive_ordered.x6350_2_0<100)=NaN; %Duration to complete alphanumeric path 
 cognitive_ordered.x6348_2_0(cognitive_ordered.x6348_2_0<100 | cognitive_ordered.x6348_2_0> (nanmean(cognitive_ordered.x6350_2_0)+3*nanstd(cognitive_ordered.x6348_2_0)) )=NaN; %Duration to complete numeric/easy path 
