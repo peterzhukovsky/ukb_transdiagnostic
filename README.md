@@ -1,4 +1,4 @@
-The following code below was used to analyse tabular UKB data (ran in MATLAB R2016a):
+The following code was used to analyse tabular UKB data (ran in MATLAB R2016a):
 
 # tabular_ukb.m
 This scripts includes 
@@ -30,7 +30,7 @@ https://www.pnas.org/content/116/19/9604
 
 https://github.com/SarahMorgan/Morphometric_Similarity_SZ/blob/master/Gene_analyses.md
 
-d) plots the results in several ways
+d) plots the results (specifically the pairwise connectivity loadings contributing to the latent PLS variables) using matrices and circular ("wheel-like") graphs
 
 # network_viz.m
 This script was used to generate the colormaps for cortical thickness brain maps. Those colormaps were used with freesurfer to generate a parcellation (aparc) similar to https://github.com/peterzhukovsky/brain_ageing
@@ -56,4 +56,11 @@ We also used plot_arc in creating the circular graph with the networks:
 
 https://uk.mathworks.com/matlabcentral/answers/6322-drawing-a-segment-of-a-circle
 
-This function was used in #drawingcircle.m# 
+This function was used in *drawingcircle.m*
+
+*drawingcircle.m* - a script to generate the colorful outside rim of the circular graphs
+
+*mktbl.m* - a function to generate a table (useful for parallelization in R2016a)
+
+*clean.m* - a function for removing outliers
+
