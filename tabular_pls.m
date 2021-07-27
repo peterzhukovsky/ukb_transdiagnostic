@@ -41,6 +41,7 @@ tmp=repmat( {'Missing'} , length(datanames_all),1 );
 tmp(minimal_ordered.x54_2_0==11025)={'Cheadle'}; tmp(minimal_ordered.x54_2_0==11026)={'Reading'}; tmp(minimal_ordered.x54_2_0==11027)={'Newcastle'}; 
 minimal_ordered.x54_2_0=tmp; clear tmp;
 
+%%% alternatively use random data: load('./random_data/randomised_data.mat') 
 
 %% %% %% %%%% %%%% %%%% %%%% %%
 %% depression vs anxiety vs stress -  rsfmri ICA; setting up the clinical variables
