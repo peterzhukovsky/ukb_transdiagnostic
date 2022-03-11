@@ -46,9 +46,9 @@ https://www.pnas.org/content/116/19/9604
 
 https://github.com/SarahMorgan/Morphometric_Similarity_SZ/blob/master/Gene_analyses.md
 
-d) plots the results (specifically the pairwise connectivity loadings contributing to the latent PLS variables) using matrices and circular ("wheel-like") graphs
+d) plots the results (specifically the pairwise connectivity loadings contributing to the latent PLS variables) using matrices and chord plots ("wheel-like" graphs). Note that we rearranged the chort plots to order the ICs according to the Yeo network.
 
-e) compares PLS results between MDD- and ANX-.
+e) compares PLS results between MDD- and ANX- using Pearson's correlations. 
 
 # network_viz.m
 This script was used to generate the colormaps for cortical thickness brain maps. Those colormaps were used with freesurfer to generate a freesurfer parcellation in  Glaser 360 ROI space, similar to https://github.com/peterzhukovsky/brain_ageing
@@ -106,3 +106,5 @@ A script used by Dr Michael Wainberg to create the polygenic risk scores can be 
 
 Permutations are notoriously slow as they require running the analysis of interest many time over and over. On a quad code intel i7 CPU with 16 GB RAM, running GLMs with apppx 27,000 participants a permutation block (of n=1000 permutations) should take 2.5-3.5h when using parfor parallelization. Using only one CPU this time would approximately quadruple. 
 Other code is relatively quick to run even with larger samples.
+
+A preprint with more information can be found at https://www.researchsquare.com/article/rs-711822/v1
