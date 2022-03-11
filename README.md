@@ -6,6 +6,7 @@ a) data cleaning and creating new variables representing clinical and cognitive 
 
 b) permutation testing general linear models testing for the effects of clinical groups (F-test) and running case-control post hoc tests (T-statistic) for 
 
+- healthy controls: ('ahc')
 - major depression: MDD- ('dep')
 - non phobic anxiety disorders: ANX- ('anx')
 - comorbid major depression with anxiety: MDD+ANX ('depanx') 
