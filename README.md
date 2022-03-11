@@ -21,13 +21,13 @@ d) demographic table
 
 e) visualizations and tables based on the above results 
 
-We repeat the main analyses several times. First, we repeat the main analysis in a subgroup of White British participants while a) not covarying for polygenic risk scores and b) while covarying for polygenic risk scores. **tabular_ukb_RMatch1to1_PRS.m**
+We repeat the main analyses several times. First, we repeat the main analysis in a subgroup of White British participants while a) not covarying for polygenic risk scores and b) while covarying for polygenic risk scores. > **tabular_ukb_RMatch1to1_PRS.m**
 
-Second, we repeat the main analysis in unmedicated participants only. **tabular_ukb_RNoMed.m**
+Second, we repeat the main analysis in unmedicated participants only. > **tabular_ukb_RNoMed.m**
 
-Third, we repeat the main analysis in participants with active MDD (PHQ2>=2) only. **tabular_ukb_RActiveD.m**
+Third, we repeat the main analysis in participants with active MDD (PHQ2>=2) only. > **tabular_ukb_RActiveD.m**
 
-Fourth, we also repeat the main analysis by combining all case groups together to generate case-control maps across all case participants. **tabular_ukb_R2Group.m**
+Fourth, we also repeat the main analysis by combining all case groups together to generate case-control maps across all case participants. > **tabular_ukb_R2Group.m**
 
 An analysis of all cases vs controls can be found in **tabular_ukb.m**
 
