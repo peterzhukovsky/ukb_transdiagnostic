@@ -1,8 +1,8 @@
 The following code was used to analyse tabular UKB data (ran in MATLAB R2016a, on windows 8.1):
 
-# tabular_ukb.m
+# tabular_ukb_RMatch1to1.m
 This scripts includes 
-a) data cleaning and creating new variables representing clinical and cognitive variables, including four non-overlapping case groups
+a) data cleaning and creating new variables representing clinical and cognitive variables, including four non-overlapping case groups. Matching controls to cases in terms of age and sex.
 
 b) permutation testing general linear models testing for the effects of clinical groups (F-test) and running case-control post hoc tests (T-statistic) for 
 
@@ -21,6 +21,16 @@ d) demographic table
 
 e) visualizations and tables based on the above results 
 
+We repeat the main analyses several times. First, we repeat the main analysis in a subgroup of White British participants while a) not covarying for polygenic risk scores and b) while covarying for polygenic risk scores. **tabular_ukb_RMatch1to1_PRS.m**
+
+Second, we repeat the main analysis in unmedicated participants only. **tabular_ukb_RNoMed.m**
+
+Third, we repeat the main analysis in participants with active MDD (PHQ2>=2) only. **tabular_ukb_RActiveD.m**
+
+Fourth, we also repeat the main analysis by combining all case groups together to generate case-control maps across all case participants. **tabular_ukb_R2Group.m**
+
+An analysis of all cases vs controls can be found in **tabular_ukb.m**
+
 # tabular_pls.m
 This script includes the following steps:
 
@@ -37,6 +47,8 @@ https://www.pnas.org/content/116/19/9604
 https://github.com/SarahMorgan/Morphometric_Similarity_SZ/blob/master/Gene_analyses.md
 
 d) plots the results (specifically the pairwise connectivity loadings contributing to the latent PLS variables) using matrices and circular ("wheel-like") graphs
+
+e) compares PLS results between MDD- and ANX-.
 
 # network_viz.m
 This script was used to generate the colormaps for cortical thickness brain maps. Those colormaps were used with freesurfer to generate a freesurfer parcellation in  Glaser 360 ROI space, similar to https://github.com/peterzhukovsky/brain_ageing
