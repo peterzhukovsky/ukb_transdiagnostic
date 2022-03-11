@@ -46,7 +46,7 @@ https://www.pnas.org/content/116/19/9604
 
 https://github.com/SarahMorgan/Morphometric_Similarity_SZ/blob/master/Gene_analyses.md
 
-d) plots the results (specifically the pairwise connectivity loadings contributing to the latent PLS variables) using matrices and chord plots ("wheel-like" graphs). Note that we rearranged the chort plots to order the ICs according to the Yeo network.
+d) plots the results (specifically the pairwise connectivity loadings contributing to the latent PLS variables) using matrices and chord plots ("wheel-like" graphs). Note that we rearranged the chort plots ordering the ICs according to the Yeo network they best match with.
 
 e) compares PLS results between MDD- and ANX- using Pearson's correlations. 
 
