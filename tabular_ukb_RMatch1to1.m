@@ -224,7 +224,7 @@ perm_id=perm_id';
 
 
 
-for n=101:500
+for n=1:1000
     allobservations=ct_ordered(:,1);n
     %first, decide who is getting which rotation using randperm
     permutation_index = randperm(length(allobservations));
